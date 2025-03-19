@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>야구 게임</title>
+  <script src="https://cdn.jsdelivr.net/npm/@woowacourse/mission-utils@1.0.1/dist/mission-utils.min.js"></script>
+  <script type="module" src="./main.js"></script>
+  <link rel="stylesheet" href="./base.css">
+</head>
+<body>
+  <h2>💻 실행 결과</h2>
+  <h1 class="title">
+    <span class="icon"></span> 숫자 야구 게임
+  </h1>
+  <h2 id="rank"></h2>
+  <input type="button" value="랭킹 초기화" id="resetRank" style="margin-left: 10px;"/>
+  <div>
+    <strong>1~9까지의 수</strong>를 중복없이 <strong>3개</strong> 입력해주세요. <br>
+    올바른 예&#41; 139 <br>
+    틀린 예&#41; 122 <br>
+  </div>
+
+  <input type="text" id="typedAnswer" autocomplete="off"/>
+  <input type="button" value="확인" id="checkAnswer""/>
+
+  <h3>📄 결과</h3>
+  <div>
+    <ul id="resultList"></ul>
+  </div>
+
+  <div id="correct" style="display: none;">
+    <h4>🎉 <strong>정답을 맞추셨습니다</strong> 🎉</h4>
+    게임을 새로 시작하시겠습니까? <br><br>
+    <input type="button" value="게임 재시작" id="restartGame""/>
+  </div>
+  
+</body>
+</html>

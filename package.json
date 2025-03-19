@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@woowacourse/mission-utils": "^2.2.0",
+    "bootstrap": "^5.3.3"
+  }
+}
