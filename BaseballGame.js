@@ -126,9 +126,54 @@ function correctAnswer() {
 
     document.getElementById('rank').style.display = 'inline-block';
     document.getElementById('resetRank').style.display = 'inline-block';
+
+    // 꽃가루 효과 추가하기
+    showFlower()
+    showRankingMessage()
   }
   cnt = 0;
 
   // 축하 표시 보여주기
   document.getElementById('correct').style.display = 'block';
+}
+
+// 꽃가루 효과 ( 구글링 & GPT )
+function showFlower() {
+  let duration = 2 * 1000;
+  let animationEnd = Date.now() + duration;
+
+  function frame() {
+    let timeLeft = animationEnd - Date.now();
+
+    confetti({
+      particleCount: 5 + Math.random() * 10,  // 5~15개 꽃가루 생성
+      spread: 100,  // 꽃가루 퍼지는 각도
+      startVelocity: 20,  // 시작 속도
+      origin: { x: Math.random(), y: Math.random() - 0.2 }  // 랜덤 위치
+    });
+
+    if (timeLeft > 0) {
+      requestAnimationFrame(frame);  // frame() 함수를 다시 실행 (반복)
+    }
+  }
+
+  frame();
+}
+
+// "축하합니다! 랭크 갱신!" 효과
+function showRankingMessage() {
+  const message = document.getElementById('rankMessage');
+
+  message.classList.remove('hidden', 'fade-out'); // 숨김 해제
+  message.classList.add('show'); // 화면 중앙에 나타남
+
+  // 3초 후에 서서히 사라지도록 설정
+  setTimeout(() => {
+    message.classList.add('fade-out');
+
+    setTimeout(() => {
+      message.classList.remove('show'); // 완전히 사라지면 다시 숨김 처리
+      message.classList.add('hidden'); 
+    }, 1000); // 1초 후에 숨김 처리
+  }, 3000); // 3초 동안 유지 후 사라짐
 }

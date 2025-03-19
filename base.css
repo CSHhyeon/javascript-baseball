@@ -17,3 +17,60 @@ ul {
   position: relative;
   top: 3px;
 }
+
+/* 랭크 갱신 축하 메시지 */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* 메시지가 나타날 때 */
+.show {
+  display: flex;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 메시지가 사라질 때 */
+.fade-out {
+  animation: fadeOutDown 0.8s ease-in forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.9);
+  }
+}
+
+/* 메시지를 화면 중앙에 고정하는 스타일 */
+#rankMessage {
+  position: fixed;  /* 화면 고정 */
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);  /* 처음엔 작게 */
+  background: rgba(0, 0, 0, 0.6); /* 반투명 배경 */
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+}
