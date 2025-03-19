@@ -63,7 +63,6 @@ ul {
   position: fixed;  /* 화면 고정 */
   top: 15%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);  /* 처음엔 작게 */
   background: rgba(0, 0, 0, 0.6); /* 반투명 배경 */
   color: white;
   padding: 20px 40px;
